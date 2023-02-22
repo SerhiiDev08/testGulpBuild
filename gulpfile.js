@@ -29,7 +29,7 @@ const path = {
 		dest: 'dist/'
 	},
 	styles: {
-		src: ['src/styles/**/*.styl', 'src/styles/**/*.less', 'src/styles/**/*.sass', 'src/styles/**/*.scss'],
+		src: ['src/styles/**/*.css', 'src/styles/**/*.styl', 'src/styles/**/*.less', 'src/styles/**/*.sass', 'src/styles/**/*.scss'],
 		dest: 'dist/css/'
 	},
 	scripts: {
@@ -94,10 +94,10 @@ function scripts() {
 	return gulp.src(path.scripts.src)
 		.pipe(sourcemaps.init())
 		// .pipe(coffee({ bare: true }))
-		.pipe(ts({
+		/* .pipe(ts({
 			noImplicitAny: true,
 			outFile: 'main.min.js'
-		}))
+		})) */
 		.pipe(babel({
 			presets: ['@babel/env']
 		}))
